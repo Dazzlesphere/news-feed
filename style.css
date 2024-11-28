@@ -1,0 +1,50 @@
+/* UTILITY CLASSES */
+.line-clamp { display: -webkit-box; -webkit-line-clamp: var(--lines); -webkit-box-orient: vertical; overflow: hidden; text-overflow: ellipsis }
+
+:root {
+    --accent-color: #795be7;
+    --dark-color: #444;
+    --light-color: #f0f0f0;
+    --gray-500: #666;
+}
+
+* { margin: 0; padding: 0; list-style: none }
+*, *::before, *::after { box-sizing: border-box }
+
+body { font-family: 'Roboto Slab', sans-serif;  line-height: 1.4; display: flex; flex-direction: column; min-height: 100vh }
+a { text-decoration: none }
+a:hover,
+a:focus { color: var(--accent-color) }
+button { cursor: pointer }
+img { max-width: 100%; vertical-align: middle }
+
+.container { max-width: 1200px; margin: 0 auto; padding: 0 1rem }
+
+.header { background-color: var(--dark-color); padding: 1rem 0; }
+.header__logo a { color: white; font-size: 1.5rem; font-weight: 700 }
+.header > .container { display: flex; justify-content: space-between; align-items: center }
+
+.nav__toggler { display: none }
+
+.nav__list { display: flex; gap:1rem; justify-content: flex-end }
+.nav__link { display: block; padding: 0.5rem; color: #fff; text-transform: capitalize; border-radius: 5px; transition: all .2s }
+.nav__link:hover {  background: #666; color: #fff }
+.nav__item.active .nav__link { background: var(--accent-color); box-shadow:0 0 0 1px rgba(255,255,255,0.1) }
+
+.footer { background: var(--dark-color); color: var(--light-color); text-align: center; padding: 1rem 0 }
+
+/* MAIN SECTION */
+.main { flex: 1; padding: 1.5rem 0 2.5rem }
+
+.cards-group { display: flex; flex-direction: column; gap: 1rem }
+.cards-group:not(:first-child) { padding-top: 2rem; margin-top: 2rem; border-top: solid 1px #ccc }
+.cards-group__header { display: flex; justify-content: space-between; align-items: center }
+.cards-group__title { text-transform: capitalize }
+.cards-group__btn { padding: 0 1rem; border: none; background: none; color: var(--accent-color) }
+
+.cards { position: relative; display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 2rem }
+.card { display: flex; flex-direction: column; gap: 1rem }
+.card__body { display: flex; flex-direction: column; gap: 0.5rem; color: var(--gray-500) }
+.card__title { --card-title-color: var(--dark-color);  font-size: 1.2rem; font-weight: 700; color: var(--card-title-color) }
+.card__img-box { position: relative; aspect-ratio: 16 / 9; overflow: hidden; border-radius: 0.5rem }
+.card__img { width: 100%;  height: 100%; object-fit: cover }
